@@ -5,6 +5,7 @@ Console Module
 This module contains the entry point of the command interpreter.
 """
 
+
 class HBNBCommand(cmd.Cmd):
     """Command interpreter for the HBNB clone project."""
     prompt = "(hbnb) "
