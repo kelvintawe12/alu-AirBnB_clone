@@ -7,7 +7,6 @@ class Review(BaseModel):
     text = ""
 
     def __init__(self, *args, **kwargs):
-        #Initializes Review instance
         super().__init__(*args, **kwargs)
         if 'place_id' in kwargs:
             self.place_id = kwargs['place_id']
@@ -42,20 +41,15 @@ class Review(BaseModel):
         self.place_id = self.place_id
 
     def update_id(self):
-        #Updates the id with a unique UUID """
         import uuid
         self.id = str(uuid.uuid4())
         return self.id
-    
+
     def get_updated_at(self):
-        # Returns the updated_at attribute #
         return self.updated_at
-    
+
     def get_created_at(self):
-        # Returns the created_at attribute 
         return self.created_at
-    
 
 revvew = Review()
 print(revvew.id)
-

@@ -5,7 +5,7 @@ class State(BaseModel):
     name = ""
     city_id = ""
     country_id = ""
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.name = kwargs.get('name')
@@ -15,13 +15,13 @@ class State(BaseModel):
         self.save_to_file()
         self.id = self.update_id()
         self.save_to_json_file()
-    
+
     def save_to_json_file(self):
         BaseModel.save_to_json_file([self])
         return True
-    
+
     def update_id(self):
         return f"State.{self.id}"
-    
+
 state = State()
 print(state.id)

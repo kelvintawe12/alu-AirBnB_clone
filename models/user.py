@@ -6,6 +6,7 @@ class User(BaseModel):
     password = ""
     first_name = ""
     last_name = ""
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.email = kwargs.get('email')
@@ -33,6 +34,5 @@ class User(BaseModel):
     def update(self):
         self.save_to_db()
         return True
-
 user = User.objects.get(id=1)
 print(user.id)
