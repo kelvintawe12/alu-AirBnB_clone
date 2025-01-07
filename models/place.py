@@ -1,7 +1,5 @@
-#!/usr/bin/python3
-
-
 import json
+
 
 class FileStorage:
     __file_path = "file.json"
@@ -12,9 +10,6 @@ class FileStorage:
         return self.__objects
 
     def new(self, obj):
-        # Sets in __objects the obj with key <obj class name>.id.
-        # Args:
-        #     obj (BaseModel): The object to add.
         key = f"{obj.__class__.__name__}.{obj.id}"
         self.__objects[key] = obj
 
