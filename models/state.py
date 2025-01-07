@@ -22,6 +22,3 @@ class State(BaseModel):
 
     def update_id(self):
         return f"State.{self.id}"
-
-state = State()
-print(state.id)

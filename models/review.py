@@ -50,6 +50,3 @@ class Review(BaseModel):
 
     def get_created_at(self):
         return self.created_at
-
-revvew = Review()
-print(revvew.id)

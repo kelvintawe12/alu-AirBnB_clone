@@ -34,5 +34,3 @@ class User(BaseModel):
     def update(self):
         self.save_to_db()
         return True
-user = User.objects.get(id=1)
-print(user.id)
