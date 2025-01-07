@@ -8,8 +8,6 @@ This module defines the BaseModel class that serves as the foundation
 for all other models in the AirBnB clone project.
 """
 
-
-
 class BaseModel:
     """Defines the BaseModel class for all other models."""
 
@@ -51,3 +49,7 @@ class BaseModel:
         result["created_at"] = self.created_at.isoformat()
         result["updated_at"] = self.updated_at.isoformat()
         return result
+    
+base = BaseModel()
+
+print(base)

@@ -25,3 +25,8 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
+    print("Exiting HBNB Console...")
+    exit(0)
+else:
+    pass
+

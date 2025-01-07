@@ -1,15 +1,15 @@
 from models.base_model import BaseModel
 
 #!/usr/bin/python3
-""" City Module for AirBnB project """
+#City Module for AirBnB project """
 
 class City(BaseModel):
-    """ The city class, contains state ID and name """
+    #The city class, contains state ID and name """
     state_id = ""
     name = ""
 
     def __init__(self, *args, **kwargs):
-        """ Initialize City class """
+        #Initialize City class """
         super().__init__(*args, **kwargs)
         self.state_id = kwargs.get('state_id', '')
         self.name = kwargs.get('name', '')
@@ -22,38 +22,38 @@ class City(BaseModel):
         return self
     
     def to_dict(self):
-        """ Returns a dictionary representation of City """
+        #Returns a dictionary representation of City """
         return {
             'state_id': self.state_id,
             'name': self.name
         }
     
     def update_id(self):
-        """ Updates the id """
+        #Updates the id """
         return f"City.{self.id}"
     
     def save_to_file(self):
-        """ Saves City instance to file """
+        #Saves City instance to file """
         from models import storage
         storage.save()
         return True
     
     def save_to_json_file(self):
-        """ Saves City instance to JSON file """
+        #Saves City instance to JSON file
         from models import storage
         storage.save()
         return True
     
     @classmethod
     def load_from_file(cls, file_path):
-        """ Loads City instance from file """
+        #Loads City instance from file """
         from models import storage
         storage.reload()
         return True
     
     @classmethod
     def load_from_json_file(cls, file_path):
-        """ Loads City instance from JSON file """
+        #Loads City instance from JSON file """
         from models import storage
         storage.reload()
         return True
