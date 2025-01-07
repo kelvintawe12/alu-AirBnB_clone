@@ -1,22 +1,19 @@
 import cmd
-
-#!/usr/bin/python3
+# !/usr/bin/python3
 """
 Console Module
 This module contains the entry point of the command interpreter.
 """
 
-
-
 class HBNBCommand(cmd.Cmd):
     """Command interpreter for the HBNB clone project."""
     prompt = "(hbnb) "
 
-    def do_quit(self, arg):
+    def do_quit(self, _):
         """Quit command to exit the program."""
         return True
 
-    def do_EOF(self, arg):
+    def do_EOF(self, _):
         """Exit the program using EOF (Ctrl+D)."""
         print()
         return True
