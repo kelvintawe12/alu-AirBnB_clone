@@ -1,8 +1,10 @@
+''' the modelsclass'''
 import uuid
 from datetime import datetime
 
 
 class BaseModel:
+    ''' the modelsclass'''
     def __init__(self, *args, **kwargs):
         if kwargs:
             for key, value in kwargs.items():
@@ -19,11 +21,14 @@ class BaseModel:
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
+        '''Save'''
         self.updated_at = datetime.now()
 
     def to_dict(self):
+        '''To dict'''
         result = self.__dict__.copy()
         result["__class__"] = self.__class__.__name__
         result["created_at"] = self.created_at.isoformat()
         result["updated_at"] = self.updated_at.isoformat()
         return result
+    

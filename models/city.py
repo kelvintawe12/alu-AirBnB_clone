@@ -1,4 +1,5 @@
 from models.base_model import BaseModel
+'''importing '''
 
 
 class City(BaseModel):
@@ -6,6 +7,7 @@ class City(BaseModel):
     name = ""
 
     def __init__(self, *args, **kwargs):
+        ''' init method'''
         super().__init__(*args, **kwargs)
         self.state_id = kwargs.get('state_id', '')
         self.name = kwargs.get('name', '')
@@ -27,7 +29,7 @@ class City(BaseModel):
         return f"City.{self.id}"
 
     def save_to_file(self):
-        from models import storage
+        from models.base_model import storage
         storage.save()
         return True
 
