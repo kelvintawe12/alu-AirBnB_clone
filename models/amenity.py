@@ -1,7 +1,9 @@
 from models.base_model import BaseModel
+'''module importation'''
 
 
 class Amenity(BaseModel):
+    '''Amenity class'''
     name = ""
     description = ""
     category = ""
