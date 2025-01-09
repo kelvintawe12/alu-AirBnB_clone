@@ -1,9 +1,9 @@
-import cmd
 # !/usr/bin/python3
 """
 Console Module
 This module contains the entry point of the command interpreter.
 """
+import cmd
 
 
 class HBNBCommand(cmd.Cmd):
