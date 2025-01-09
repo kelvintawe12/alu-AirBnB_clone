@@ -1,7 +1,10 @@
+'''importation'''
+import uuid
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
+    '''doc'''
     place_id = ""
     user_id = ""
     text = ""
@@ -41,12 +44,15 @@ class Review(BaseModel):
         self.place_id = self.place_id
 
     def update_id(self):
-        import uuid
+        '''doc'''
         self.id = str(uuid.uuid4())
         return self.id
 
     def get_updated_at(self):
+        '''doc'''
         return self.updated_at
 
     def get_created_at(self):
+        '''doc'''
         return self.created_at
+    
