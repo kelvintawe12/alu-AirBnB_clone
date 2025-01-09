@@ -6,7 +6,7 @@ class City(BaseModel):
     '''class creation'''
     state_id = ""
     name = ""
-    
+
 
 def __init__(self, *args, **kwargs):
         ''' init method'''
@@ -21,7 +21,8 @@ def __init__(self, *args, **kwargs):
         print(f"City object created: {self.name}")
         '''return self'''
 
-    def to_dict(self):
+def to_dict(self):
+        '''doc'''
         return {
             'state_id': self.state_id,
             'name': self.name
