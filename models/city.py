@@ -29,24 +29,29 @@ def to_dict(self):
             'name': self.name
         }
 
+
 def update_id(self):
         return f"City.{self.id}"
+
 
 def save_to_file(self):
         from models.base_model import storage
         storage.save()
         return True
 
+
 def save_to_json_file(self):
         from models import storage
         storage.save()
         return True
+
 
 @classmethod
 def load_from_file(cls, file_path):
         from models import storage
         storage.reload()
         return True
+
 
 @classmethod
 def load_from_json_file(cls, file_path):
