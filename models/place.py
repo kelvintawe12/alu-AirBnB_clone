@@ -1,7 +1,9 @@
+'''import'''
 import json
 
 
 class FileStorage:
+    '''doc'''
     __file_path = "file.json"
     __objects = {}
 

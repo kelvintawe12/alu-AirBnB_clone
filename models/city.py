@@ -1,12 +1,12 @@
+'''import'''
 from models.base_model import BaseModel
-'''importing '''
-
 
 class City(BaseModel):
+    '''class creation'''
     state_id = ""
     name = ""
-
-    def __init__(self, *args, **kwargs):
+    
+def __init__(self, *args, **kwargs):
         ''' init method'''
         super().__init__(*args, **kwargs)
         self.state_id = kwargs.get('state_id', '')
@@ -17,7 +17,7 @@ class City(BaseModel):
         self.save_to_json_file()
         self.save()
         print(f"City object created: {self.name}")
-        return self
+        '''return self'''
 
     def to_dict(self):
         return {

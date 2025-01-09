@@ -1,7 +1,9 @@
+'''module importation'''
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
+    '''creation of the classe'''
     email = ""
     password = ""
     first_name = ""
@@ -20,17 +22,21 @@ class User(BaseModel):
         return True
 
     def update(self, **kwargs):
+        '''update function'''
         self.update()
         return True
 
     def delete(self):
+        '''delete fonction'''
         self.delete()
         return True
 
     def create(self):
+        '''create function'''
         self.save_to_db()
         return True
 
     def update(self):
+        '''update'''
         self.save_to_db()
         return True

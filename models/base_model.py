@@ -6,6 +6,7 @@ from datetime import datetime
 class BaseModel:
     ''' the modelsclass'''
     def __init__(self, *args, **kwargs):
+        self.args = args
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
@@ -31,4 +32,4 @@ class BaseModel:
         result["created_at"] = self.created_at.isoformat()
         result["updated_at"] = self.updated_at.isoformat()
         return result
-    
+        

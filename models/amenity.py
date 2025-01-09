@@ -1,7 +1,5 @@
-from models.base_model import BaseModel
 '''module importation'''
-
-
+from models.base_model import BaseModel
 class Amenity(BaseModel):
     '''Amenity class'''
     name = ""
@@ -16,6 +14,7 @@ class Amenity(BaseModel):
     updated_at = ""
 
     def __init__(self, *args, **kwargs):
+        '''doc'''
         super().__init__(*args, **kwargs)
         self.name = kwargs.get('name')
         self.description = kwargs.get('description')
@@ -37,13 +36,16 @@ class Amenity(BaseModel):
         return f"{self.name}"
 
     def save_to_json_file(self):
+        '''doc'''
         BaseModel.save_to_json_file([self])
         return True
 
     def update_id(self):
+        '''doc'''
         return BaseModel.update_id()
 
     def save_to_file(self):
+        '''doc'''
         return True
 
     def to_dict(self):
@@ -62,6 +64,7 @@ class Amenity(BaseModel):
 
     @classmethod
     def load_from_json_file(cls, filename):
+        '''doc'''
         from models import storage
         storage.reload()
         return True
