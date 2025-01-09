@@ -55,4 +55,3 @@ class Review(BaseModel):
     def get_created_at(self):
         '''doc'''
         return self.created_at
-    
