@@ -7,7 +7,7 @@ class FileStorage:
 
     def __init__(self):
         """Initialize the FileStorage instance."""
-        self.__file_path = "models/engine/file.json"  # Path to the JSON file
+        self.__file_path = "file.json"  # Path to the JSON file
         self.__objects = {}  # Dictionary to store all objects
 
     def all(self):
