@@ -9,17 +9,16 @@ class City(BaseModel):
 
 
 def __init__(self, *args, **kwargs):
-        ''' init method'''
-        super().__init__(*args, **kwargs)
-        self.state_id = kwargs.get('state_id', '')
-        self.name = kwargs.get('name', '')
-        self.save()
-        self.save_to_file()
-        self.id = self.update_id()
-        self.save_to_json_file()
-        self.save()
-        print(f"City object created: {self.name}")
-        '''return self'''
+     ''' init method'''
+     super().__init__(*args, **kwargs)
+     self.state_id = kwargs.get('state_id', '')
+     self.name = kwargs.get('name', '')
+     self.save()
+     self.save_to_file()
+     self.id = self.update_id()
+     self.save_to_json_file()
+     self.save()
+     print(f"City object created: {self.name}")
 
 
 def to_dict(self):
@@ -41,6 +40,7 @@ def save_to_file(self):
 
 
 def save_to_json_file(self):
+        '''ok'''
         from models import storage
         storage.save()
         return True
