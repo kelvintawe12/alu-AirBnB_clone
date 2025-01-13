@@ -1,6 +1,8 @@
 ''' the modelsclass'''
 import uuid
 from datetime import datetime
+# from models import storage  
+from models.engine.file_storage import FileStorage
 
 
 class BaseModel:
@@ -17,6 +19,8 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            self.storage = FileStorage()
+            self.storage.new(self)  # Add a call to the method new(self) on storage
 
     def __str__(self):
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
@@ -24,6 +28,7 @@ class BaseModel:
     def save(self):
         '''Save'''
         self.updated_at = datetime.now()
+        self.storage.save()  # Call save(self) method of storage
 
     def to_dict(self):
         '''To dict'''
