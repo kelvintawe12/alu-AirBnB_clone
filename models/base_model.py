@@ -9,6 +9,7 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """Initialize a new instance of BaseModel."""
+        self.args = args
         if kwargs:
             # Load attributes from the dictionary `kwargs`
             for key, value in kwargs.items():
