@@ -2,12 +2,13 @@
 import uuid
 from datetime import datetime
 # from models import storage  
-from models.engine.file_storage import FileStorage
+from models.engine.file_storage1 import FileStorage
 
 
 class BaseModel:
     ''' the modelsclass'''
     def __init__(self, *args, **kwargs):
+        self.kwargs = kwargs
         self.args = args
         if kwargs:
             for key, value in kwargs.items():
@@ -28,7 +29,7 @@ class BaseModel:
     def save(self):
         '''Save'''
         self.updated_at = datetime.now()
-        self.storage.save()  # Call save(self) method of storage
+        self.s  # Call save(self) method of storage
 
     def to_dict(self):
         '''To dict'''
