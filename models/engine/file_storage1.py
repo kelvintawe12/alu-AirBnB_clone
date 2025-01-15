@@ -3,8 +3,6 @@ import json
 
 
 class FileStorage():
-    '''ok'''
-    def ___init__ (self):
     __file_path = "file.json"
     __objects = {}
 
