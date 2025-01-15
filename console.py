@@ -4,7 +4,7 @@ Console Module
 This module contains the entry point of the command interpreter.
 """
 import cmd
-from models.base_model import BaseModel
+from models.base_model2 import BaseModel
 from models import storage  # This assumes a storage system managing all objects
 
 

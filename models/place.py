@@ -24,7 +24,7 @@ class FileStorage:
         # Deserializes the JSON file to __objects, if it exists.
         try:
             with open(self.__file_path, "r", encoding="utf-8") as f:
-                from models.base_model import BaseModel
+                from models.base_model2 import BaseModel
                 objects = json.load(f)
                 for key, value in objects.items():
                     cls_name = value["__class__"]

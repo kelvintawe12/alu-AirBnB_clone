@@ -1,6 +1,6 @@
 '''importation'''
 import uuid
-from models.base_model import BaseModel
+from models.base_model2 import BaseModel
 
 
 class Review(BaseModel):

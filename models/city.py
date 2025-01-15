@@ -1,5 +1,5 @@
 '''import'''
-from models.base_model import BaseModel
+from models.base_model2 import BaseModel
 
 
 class City(BaseModel):
@@ -34,7 +34,7 @@ def update_id(self):
 
 
 def save_to_file(self):
-        from models.base_model import storage
+        from models.base_model2 import storage
         storage.save()
         return True
 
