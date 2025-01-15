@@ -16,14 +16,16 @@ class HBNBCommand(cmd.Cmd):
     """Command interpreter for the HBNB clone project."""
     prompt = "(hbnb) "
 
-    def do_quit(self, arg):
+    def do_quit(self, line):
         """Quit command to exit the program."""
         return True
 
-    def do_EOF(self, arg):
+    def do_EOF(self, line):
         """Exit the program using EOF (Ctrl+D)."""
         print()  # To ensure a new line after EOF is entered
         return True
+    def do_help(self, line):
+        
 
     def emptyline(self):
         """Override default behavior for empty input lines."""

@@ -2,13 +2,10 @@
 import json
 
 
-class FileStorage:
-    """Class for handling storage of objects in JSON format."""
-
-    def __init__(self):
-        """Initialize the FileStorage instance."""
-        self.__file_path = "file.json"  # Path to the JSON file
-        self.__objects = {}  # Dictionary to store all objects
+class FileStorage():
+    """Class to store data in a file"""
+    __file_path = "file.json"  # Path to the JSON file
+    __objects = {}  # Dictionary to store all objects
 
     def all(self):
         """Return the dictionary of stored objects."""
@@ -21,22 +18,21 @@ class FileStorage:
 
     def save(self):
         """Serialize __objects to the JSON file."""
-        with open(self.__file_path, "w", encoding="utf-8") as f:
+        with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
             json.dump({k: v.to_dict() for k, v in self.__objects.items()}, f)
 
     def reload(self):
         """Deserialize the JSON file to __objects."""
-        try:
-            with open(self.__file_path, "r", encoding="utf-8") as f:
-                objects = json.load(f)
-                for key, value in objects.items():
-                    cls_name = value["__class__"]
-                    # Re-creates objects using the appropriate class
-                    self.__objects[key] = eval(cls_name)(**value)
-        except FileNotFoundError:
-            # Do nothing if the file doesn't exist
-            pass
-        except Exception as e:
-            # Handle any unexpected errors during reload
-            print(f"Error reloading objects: {e}")
-            pass
+        with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
+            objects = json.load(f)
+            for key, value in objects.items():
+                cls_name = value["__class__"]
+                # Re-creates objects using the appropriate class
+                from models.base_model import BaseModel  # Import your model classes
+                class_dict = {
+                    "BaseModel": BaseModel,
+                    # Add other classes here
+                }
+                self.__objects[key] = class_dict[cls_name](**value)
+                self.__objects[key].id = key.split(".")[1]
+            
