@@ -1,11 +1,11 @@
-'''importation'''
 import json
+import os
 
+class FileStorage:
+    """Class to handle object serialization and storage."""
 
-class FileStorage():
-    """Class to store data in a file"""
     __file_path = "file.json"  # Path to the JSON file
-    __objects = {}  # Dictionary to store all objects
+    __objects = {}  # Dictionary to store objects
 
     def all(self):
         """Return the dictionary of stored objects."""
@@ -18,21 +18,27 @@ class FileStorage():
 
     def save(self):
         """Serialize __objects to the JSON file."""
+        # Ensure the file exists before writing to it
+        if not os.path.exists(FileStorage.__file_path):
+            with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
+                json.dump({}, f)  # Create an empty JSON file
+
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
             json.dump({k: v.to_dict() for k, v in self.__objects.items()}, f)
 
     def reload(self):
         """Deserialize the JSON file to __objects."""
+        # Create the file if it doesn't exist
+        if not os.path.exists(FileStorage.__file_path):
+            with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
+                json.dump({}, f)  # Create an empty JSON file
+
+        # Deserialize the JSON file if it contains data
         with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
             objects = json.load(f)
             for key, value in objects.items():
                 cls_name = value["__class__"]
-                # Re-creates objects using the appropriate class
-                from models.base_model import BaseModel  # Import your model classes
-                class_dict = {
-                    "BaseModel": BaseModel,
-                    # Add other classes here
-                }
-                self.__objects[key] = class_dict[cls_name](**value)
-                self.__objects[key].id = key.split(".")[1]
-            
+                # Dynamically import the appropriate class
+                module = __import__("models." + cls_name.lower(), fromlist=[cls_name])
+                cls = getattr(module, cls_name)
+                self.__objects[key] = cls(**value)
