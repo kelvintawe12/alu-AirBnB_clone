@@ -1,0 +1,26 @@
+body {
+    /* ...existing code... */
+}
+
+.container {
+    /* ...existing code... */
+}
+
+@media (max-width: 600px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .places-container {
+        flex-direction: column;
+    }
+
+    .places article {
+        width: 100%;
+    }
+}

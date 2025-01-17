@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Places</title>
+  <link rel="stylesheet" href="styles/4-common.css">
+  <link rel="stylesheet" href="styles/3-header.css">
+  <link rel="stylesheet" href="styles/3-footer.css">
+  <link rel="stylesheet" href="styles/6-filters.css">
+  <link rel="stylesheet" href="styles/100-places.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Place</h1>
+    <nav>
+      <ul>
+        <li><a href="#filters">Filters</a></li>
+        <li><a href="#places">Places</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="filters">
+    <h2>Filters</h2>
+    <div class="filters-box">
+      <label for="location">Location:</label>
+      <select id="location">
+        <option value="city1">City 1</option>
+        <option value="city2">City 2</option>
+      </select>
+      <label for="price">Price Range:</label>
+      <select id="price">
+        <option value="low">Low</option>
+        <option value="high">High</option>
+      </select>
+      <button>Search</button>
+    </div>
+  </section>
+
+  <section id="places">
+    <h2>Available Places</h2>
+    <article>
+      <h3>Place Name</h3>
+      <p>Description of the place.</p>
+      <div class="amenities">
+        <h2>Amenities</h2>
+        <ul>
+          <li>Pet Friendly</li>
+          <li>TV</li>
+          <li>WiFi</li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h2>Reviews</h2>
+        <ul>
+          <li>
+            <h3>From Bob Dylan on January 27, 2017</h3>
+            <p>Great place to stay!</p>
+          </li>
+          <li>
+            <h3>From Alice Johnson on March 15, 2023</h3>
+            <p>Amazing experience, will come back!</p>
+          </li>
+        </ul>
+      </div> 
+    </article>
+  </section>
+
+  <footer>
+    <p>© 2025 Our Place. All rights reserved.</p>
+  </footer>
+</body>
+</html>

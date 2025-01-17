@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AirBnB Clone</title>
+    <link rel="stylesheet" href="styles/103-common.css">
+    <link rel="stylesheet" href="styles/103-header.css">
+    <link rel="stylesheet" href="styles/103-footer.css">
+    <link rel="stylesheet" href="styles/103-filters.css">
+    <link rel="stylesheet" href="styles/103-places.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>AirBnB Clone</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="filter">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location">
+        </div>
+        <div class="filter">
+            <label for="check-in">Check-in</label>
+            <input type="date" id="check-in" name="check-in">
+        </div>
+        <div class="filter">
+            <label for="check-out">Check-out</label>
+            <input type="date" id="check-out" name="check-out">
+        </div>
+        <div class="filter">
+            <label for="guests">Guests</label>
+            <input type="number" id="guests" name="guests" min="1" max="10">
+        </div>
+        <button type="submit">Search</button>
+    </section>
+
+    <!-- Places -->
+    <section class="places">
+        <article class="place">
+            <img src="images/place1.jpg" alt="Place 1">
+            <h2>Place 1</h2>
+            <p>Description of place 1.</p>
+        </article>
+        <article class="place">
+            <img src="images/place2.jpg" alt="Place 2">
+            <h2>Place 2</h2>
+            <p>Description of place 2.</p>
+        </article>
+        <!-- Add more places as needed -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 AirBnB Clone. All rights reserved.</p>
+    </footer></div>
+</body>
+</html>
